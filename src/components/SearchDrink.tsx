@@ -1,4 +1,11 @@
+import { useAppStore } from "../stores/useAppStore"
+import {v4 as uuid} from "uuid"
+
 const SearchDrink = () => {
+
+    const {categories: {drinks}} = useAppStore()
+
+    
   return (
     <form className="md:w-1/2 2xl:w-1/3 bg-orange-400 my-24 p-10 rounded-lg shadow-lg space-y-6">
                     <div className="space-y-4">
@@ -28,6 +35,9 @@ const SearchDrink = () => {
                             className="p-3 w-full rounded-lg focus:outline-none"
                         >
                             <option value="">--Select--</option>
+                            {drinks.map(category=>(
+                                <option value={category.strCategory} key={uuid()}>{category.strCategory}</option>
+                            ))}
                         </select>
                     </div>
 
