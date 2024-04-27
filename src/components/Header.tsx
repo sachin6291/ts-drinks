@@ -1,10 +1,10 @@
-import { useEffect, useMemo, useState } from "react"
+import { useEffect, useMemo } from "react"
 import { NavLink, useLocation } from "react-router-dom"
 import SearchDrink from "./SearchDrink"
 import { useAppStore } from "../stores/useAppStore"
 
 const Header = () => {
-    const [searchFilter, setSearchFilter] = useState()
+    
 
     const {pathname}= useLocation()
 
