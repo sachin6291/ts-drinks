@@ -18,7 +18,7 @@ const DrinkCard = ({drink}:DrinkCardProp) => {
                 <button
                     type="button"
                     className="bg-orange-400 hover:bg-orange-500 mt-5 w-full p-3 font-bold text-white text-lg"
-                    onClick={()=> selectRecipe()}
+                    onClick={()=> selectRecipe(drink.idDrink)}
                 >Recipe</button>
             </div>
         </div>
