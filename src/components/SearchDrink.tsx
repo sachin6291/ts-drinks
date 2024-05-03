@@ -9,10 +9,10 @@ const SearchDrink = () => {
         ingredient:"",
         category:""
     })
-    const [error, setError]= useState("")
+
     
 
-    const {categories: {drinks}, searchRecepies} = useAppStore()
+    const {categories: {drinks}, searchRecepies, showNotification} = useAppStore()
 
     const handleChange =(e: ChangeEvent<HTMLInputElement> | ChangeEvent<HTMLSelectElement>)=>{
         setSearchFilter({
@@ -23,7 +23,7 @@ const SearchDrink = () => {
     const handleSubmit= (e: FormEvent<HTMLFormElement>)=>{
         e.preventDefault()
         if(Object.values(searchFilter).includes("")){
-            setError("")
+            showNotification({text:"All feilds are required", error: true})
             return
         }
         searchRecepies(searchFilter)
